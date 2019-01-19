@@ -15,23 +15,6 @@ fieldset {
 	border-radius: 4px 4px 4px 4px;
 }
 
-.leftMargin375 {
-    margin-left: 375px;
-}
-
-.skinny1 {
-    width: 300px;
-    margin-top: 0px;
-    margin-left: 0px;
-    margin-bottom: 0px;
-}
-.skinny2 {
-    width: 170px;
-    margin-top: 0px;
-    margin-left: 0px;
-    margin-bottom: 0px;
-}
-
 .heading {
 	margin-top: 10px;
 	margin-bottom: 10px;
@@ -44,7 +27,6 @@ form {
 }
 
 /***********************************************/
-/* Ashley */
 
 table {
 	border-collapse: collapse;

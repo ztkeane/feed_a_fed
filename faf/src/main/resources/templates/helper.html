@@ -1,23 +1,23 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-	<title>Doctor</title>
+	<title>Helper</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <a class="heading" href="/index.html">Home</a>
-	<h1 class="heading">Doctor</h1>
+	<h1 class="heading">Helper</h1>
 
 	<fieldset>
         <legend>Add, Update or Delete</legend>
         
-		<form action="#" th:action="@{/doctor}" th:object="${doctor}" method="post">
+		<form action="#" th:action="@{/helper}" th:object="${helper}" method="post">
 
             <table>
                 <tr>
                     <td><p>Option: </p></td>
-                    <td><select id="doctorOption" name="action" onchange="update()" th:field="*{aud}">
+                    <td><select name="action" onchange="update()" th:field="*{aud}">
                         <option value="add">Add</option>
                         <option value="update">Update</option>
                         <option value="delete">Delete</option>
