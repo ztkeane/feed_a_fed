@@ -1,0 +1,2 @@
+c1	The University of Arizona	1428 E University Blvd. Tucson, AZ 85721	5206212211	Tucson	Pima	Arizona
+c2	Fun Park	298 4th St Phoenix, AZ 83929	4802930495	Phoenix	Maricopa	Arizona

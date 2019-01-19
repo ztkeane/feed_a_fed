@@ -1,0 +1,5 @@
+Tucson	Pima	Arizona
+Yuma	Yuma	Arizona
+Phoenix	Maricopa	Arizona
+Oro Valley	Pima	Arizona
+

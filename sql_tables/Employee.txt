@@ -1,0 +1,3 @@
+e1	Eric Smith	esmith@gmail.com	Tucson	Pima	Arizona	5201924820	2
+e2	John Brown	jb12@gmail.com	Oro Valley	Pima	Arizona	52013049332	5
+e3	Chris Maher	chrism@hotmail.com	Phoenix	Maricopa	Arizona	4806841920	0
