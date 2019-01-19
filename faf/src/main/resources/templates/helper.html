@@ -17,43 +17,39 @@
             <table>
                 <tr>
                     <td><p>Option: </p></td>
-                    <td><select name="action" onchange="update()" th:field="*{aud}">
+                    <td><select id ="helperOption" name="action" onchange="update()" th:field="*{aud}">
                         <option value="add">Add</option>
                         <option value="update">Update</option>
                         <option value="delete">Delete</option>
                     </select></td>
                 </tr>
                 <tr>
-                    <td><p>Doctor ID: </p></td>
-                    <td><input id="doctorId" type="text" placeholder="dr*****" maxlength="7" required th:field="*{did}" /></td>
+                    <td><p>Helper ID: </p></td>
+                    <td><input id="helperId" type="text" placeholder="h****" maxlength="5" required th:field="*{hid}" /></td>
                 </tr>
                 <tr>
-                    <td><p>Last Name: </p></td>
-                    <td><input id="doctorLname" type="text" maxlength="20" required th:field="*{lname}" /></td>
+                    <td><p>Name: </p></td>
+                    <td><input id="name" type="text" maxlength="20" required th:field="*{name}" /></td>
                 </tr>
                 <tr>
-                    <td><p>First Name: </p></td>
-                    <td><input id="doctorFname" type="text" maxlength="20" required th:field="*{fname}" /></td>
+                    <td><p>Email: </p></td>
+                    <td><input id="helperEmail" type="text" required th:field="*{email}"/></td>
                 </tr>
                 <tr>
-                    <td><p>DOB: </p></td>
-                    <td><input id="doctorDob" type="date" required th:field="*{dob}"/></td>
+                    <td><p>City: </p></td>
+                    <td><input id="city" type="text" maxlength="25" th:field="*{city}"/></td>
                 </tr>
                 <tr>
-                    <td><p>Status: </p></td>
-                    <td><select id="doctorStatus" name="status" th:field="*{status}">
-                        <option value="trainee">Trainee</option>
-                        <option value="tenured">Tenured</option>
-                        <option value="visiting">Visiting</option>
-                    </select></td>
+                    <td><p>County: </p></td>
+                    <td><input id="county" type="text" maxlength="30" th:field="*{county}"/></td>
                 </tr>
                 <tr>
-                    <td><p>Dept. ID: </p></td>
-                    <td><input id="doctorDeptid" type="text" maxlength="11" th:field="*{deptid}"/></td>
+                    <td><p>State: </p></td>
+                    <td><input id="state" type="text" maxlength="15" th:field="*{state}"/></td>
                 </tr>
                 <tr>
-                    <td><p>Office #: </p></td>
-                    <td><input id="doctorOfficeno" type="text" maxlength="11" th:field="*{officeno}"/></td>
+                    <td><p>Description: </p></td>
+                    <td><input id="description" type="text" maxlength="180" th:field="*{description}"/></td>
                 </tr>
                 <tr>
                     <td><input type="reset" value="Reset" onclick="hardReset()"/></td>
@@ -66,59 +62,46 @@
     
     <script type="text/javascript">
         function update() {
-            var option = document.getElementById("doctorOption").value;
+            var option = document.getElementById("helperOption").value;
             if(option === "add") {
                 // Set required
-                document.getElementById("doctorLname").setAttribute("required", "true");
-                document.getElementById("doctorFname").setAttribute("required", "true");
-                document.getElementById("doctorDob").setAttribute("required", "true");
-                // Remove disabled
-                document.getElementById("doctorLname").removeAttribute("disabled");
-                document.getElementById("doctorFname").removeAttribute("disabled");
-                document.getElementById("doctorDob").removeAttribute("disabled");
-                document.getElementById("doctorStatus").removeAttribute("disabled");
-                document.getElementById("doctorDeptid").removeAttribute("disabled");
-                document.getElementById("doctorOfficeno").removeAttribute("disabled");
+            document.getElementById("helperId").setAttribute("required", "true");
+            document.getElementById("name").setAttribute("required", "true");
+            document.getElementById("helperEmail").setAttribute("required", "true");
+            document.getElementById("city").setAttribute("required", "true");
+            document.getElementById("county").setAttribute("required", "true");
+            document.getElementById("state").setAttribute("required", "true");
+            document.getElementById("description").setAttribute("required", "true");
             } else if(option === "update") {
-                //Set disabled
-                document.getElementById("doctorDob").setAttribute("disabled", "true");
-                // Remove required
-                document.getElementById("doctorLname").removeAttribute("required");
-                document.getElementById("doctorFname").removeAttribute("required");
-                document.getElementById("doctorDob").removeAttribute("required");
-                // Remove disabled
-                document.getElementById("doctorLname").removeAttribute("disabled");
-                document.getElementById("doctorFname").removeAttribute("disabled");
-                document.getElementById("doctorStatus").removeAttribute("disabled");
-                document.getElementById("doctorDeptid").removeAttribute("disabled");
-                document.getElementById("doctorOfficeno").removeAttribute("disabled");
+                // Set required
+            document.getElementById("helperId").setAttribute("required", "true");
+            document.getElementById("name").setAttribute("required", "true");
+            document.getElementById("helperEmail").setAttribute("required", "true");
+            document.getElementById("city").setAttribute("required", "true");
+            document.getElementById("county").setAttribute("required", "true");
+            document.getElementById("state").setAttribute("required", "true");
+            document.getElementById("description").setAttribute("required", "true");
             } else if(option === "delete") {
-                // Set disabled
-                document.getElementById("doctorLname").setAttribute("disabled", "true");
-                document.getElementById("doctorFname").setAttribute("disabled", "true");
-                document.getElementById("doctorDob").setAttribute("disabled", "true");
-                document.getElementById("doctorStatus").setAttribute("disabled", "true");
-                document.getElementById("doctorDeptid").setAttribute("disabled", "true");
-                document.getElementById("doctorOfficeno").setAttribute("disabled", "true");
-                // Remove required
-                document.getElementById("doctorLname").removeAttribute("required");
-                document.getElementById("doctorFname").removeAttribute("required");
-                document.getElementById("doctorDob").removeAttribute("required");
+               // Set required
+            document.getElementById("helperId").setAttribute("required", "true");
+            document.getElementById("name").setAttribute("required", "true");
+            document.getElementById("helperEmail").setAttribute("required", "true");
+            document.getElementById("city").setAttribute("required", "true");
+            document.getElementById("county").setAttribute("required", "true");
+            document.getElementById("state").setAttribute("required", "true");
+            document.getElementById("description").setAttribute("required", "true");
             }
         }
         
         function hardReset() {
             // Set required
-            document.getElementById("doctorLname").setAttribute("required", "true");
-            document.getElementById("doctorFname").setAttribute("required", "true");
-            document.getElementById("doctorDob").setAttribute("required", "true");
-            // Remove disabled
-            document.getElementById("doctorLname").removeAttribute("disabled");
-            document.getElementById("doctorFname").removeAttribute("disabled");
-            document.getElementById("doctorDob").removeAttribute("disabled");
-            document.getElementById("doctorStatus").removeAttribute("disabled");
-            document.getElementById("doctorDeptid").removeAttribute("disabled");
-            document.getElementById("doctorOfficeno").removeAttribute("disabled");
+            document.getElementById("helperId").setAttribute("required", "true");
+            document.getElementById("name").setAttribute("required", "true");
+            document.getElementById("helperEmail").setAttribute("required", "true");
+            document.getElementById("city").setAttribute("required", "true");
+            document.getElementById("county").setAttribute("required", "true");
+            document.getElementById("state").setAttribute("required", "true");
+            document.getElementById("description").setAttribute("required", "true");
         }
     </script>
 
