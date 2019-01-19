@@ -66,7 +66,6 @@ public class EmployeeController {
     
     @PostMapping("/employee")
     public String employeeSubmit(@ModelAttribute Employee employee) {
-        return "success";
         /*//FIRST, EID
         String eid = employee.getEid().toLowerCase();
         

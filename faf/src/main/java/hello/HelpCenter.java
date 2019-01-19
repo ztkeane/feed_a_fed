@@ -16,7 +16,7 @@ public class HelpCenter {
     public void setAud(String aud) { this.aud = aud; }
     
     public String getCid() { return cid; }
-    public void setCid(String cid) { this.eid = cid; }
+    public void setCid(String cid) { this.cid = cid; }
     
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }
