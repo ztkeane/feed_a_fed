@@ -133,14 +133,16 @@ public class CreateTable {
                 String city = info[4];
                 String county = info[5];
                 String state = info[6];
+                myStatement += cid + "', '" + name + "', '" + address + "', '" + phoneNo + "', '" + city + "', '" + county + "', '" + state + "')";
             }
             else if (tableName.equals("location")) {
-                if (into.length != 3) {
-                    Sytem.err.println("location should have 3 fields.");
+                if (info.length != 3) {
+                    System.err.println("location should have 3 fields.");
                 }
                 String city = info[0];
                 String county = info[1];
                 String state = info[2];
+                myStatement += city + "', '" + county + "', '" + state + "')";
             }
             else {
                 System.err.println("Table name is not valid.");
@@ -148,17 +150,6 @@ public class CreateTable {
             }
             //Create stmt, so we may update the tables.
             Statement stmt = null;
-            //Create myStatement, a String containing the entirety of the SQL query.
-            myStatement += ("insert into ztkeane." + tableName + " values ('" + districtNum + "', '" + districtName + "', '" + schoolNum + "', '" + schoolName + "', '" + numStudents + "', ");
-            //Keep building myStatement through nulls.
-            if (meanScore.equals("NULL")) {
-                myStatement += (meanScore + ", ");
-            }
-            else {
-                myStatement += ("'" + meanScore + "', ");
-            }
-            //Finish building myStatement
-            myStatement += (percPassing + ", " + one + ", " + two + ", " + three + ", " + four + ", " + five + ")");
             
             try {
                 //Create a statement.
