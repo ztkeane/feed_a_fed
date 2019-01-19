@@ -1,18 +1,18 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Query #1</title>
+    <title>Query #2</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <a class="heading" href="/index.html">Home</a>
-    <h1 class="heading">Query #1</h1>
+    <h1 class="heading">Query #2</h1>
     
-    <p class="description">Match Helper with a Federal Employee nearby within their City, County, or State.</p>
+    <p class="description">Match Federal Employee with HelpCenter nearby.</p>
     
     <fieldset>
-        <form action="#" th:action="@{/query1}" th:object="${query1}" method="post">
+        <form action="#" th:action="@{/query2}" th:object="${query2}" method="post">
             
             <p>City: <input type="text" required th:field="*{city}" /></p>
 			<p>County: <input type="text" required th:field="*{county}" /></p>

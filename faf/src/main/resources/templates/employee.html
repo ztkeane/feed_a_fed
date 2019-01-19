@@ -1,23 +1,23 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-	<title>Helper</title>
+	<title>Employee</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <a class="heading" href="/index.html">Home</a>
-	<h1 class="heading">Helper</h1>
+	<h1 class="heading">Employee</h1>
 
 	<fieldset>
         <legend>Add, Update or Delete</legend>
         
-		<form action="#" th:action="@{/helper}" th:object="${helper}" method="post">
+		<form action="#" th:action="@{/employee}" th:object="${employee}" method="post">
 
             <table>
                 <tr>
                     <td><p>Option: </p></td>
-                    <td><select id ="helperOption" name="action" onchange="update()" th:field="*{aud}">
+                    <td><select id ="employeeOption" name="action" onchange="update()" th:field="*{aud}">
                         <option value="add">Add</option>
                         <option value="update">Update</option>
                         <option value="delete">Delete</option>
@@ -25,7 +25,7 @@
                 </tr>
                 <tr>
                     <td><p>Helper ID: </p></td>
-                    <td><input id="helperId" type="text" placeholder="h****" maxlength="5" required th:field="*{hid}" /></td>
+                    <td><input id="employeeId" type="text" placeholder="e****" maxlength="5" required th:field="*{eid}" /></td>
                 </tr>
                 <tr>
                     <td><p>Name: </p></td>
@@ -33,11 +33,11 @@
                 </tr>
                 <tr>
                     <td><p>Email: </p></td>
-                    <td><input id="helperEmail" type="text" required th:field="*{email}"/></td>
+                    <td><input id="employeeEmail" type="text" required th:field="*{email}"/></td>
                 </tr>
                 <tr>
                     <td><p>PhoneNo: </p></td>
-                    <td><input id="helperPhone" maxlength="10" type="text" required th:field="*{phoneNo}"/></td>
+                    <td><input id="employeePhone" maxlength="10" type="text" required th:field="*{phoneNo}"/></td>
                 </tr>
                 <tr>
                     <td><p>City: </p></td>
@@ -66,33 +66,33 @@
     
     <script type="text/javascript">
         function update() {
-            var option = document.getElementById("helperOption").value;
+            var option = document.getElementById("employeeOption").value;
             if(option === "add") {
                 // Set required
-            document.getElementById("helperId").setAttribute("required", "true");
+            document.getElementById("employeeId").setAttribute("required", "true");
             document.getElementById("name").setAttribute("required", "true");
-            document.getElementById("helperEmail").setAttribute("required", "true");
-            document.getElementById("helperPhone").setAttribute("required", "true");
+            document.getElementById("employeeEmail").setAttribute("required", "true");
+            document.getElementById("employeePhone").setAttribute("required", "true");
             document.getElementById("city").setAttribute("required", "true");
             document.getElementById("county").setAttribute("required", "true");
             document.getElementById("state").setAttribute("required", "true");
             document.getElementById("description").setAttribute("required", "true");
             } else if(option === "update") {
                 // Set required
-            document.getElementById("helperId").setAttribute("required", "true");
+            document.getElementById("employeeId").setAttribute("required", "true");
             document.getElementById("name").setAttribute("required", "true");
-            document.getElementById("helperEmail").setAttribute("required", "true");
-            document.getElementById("helperPhone").setAttribute("required", "true");
+            document.getElementById("employeeEmail").setAttribute("required", "true");
+            document.getElementById("employeePhone").setAttribute("required", "true");
             document.getElementById("city").setAttribute("required", "true");
             document.getElementById("county").setAttribute("required", "true");
             document.getElementById("state").setAttribute("required", "true");
             document.getElementById("description").setAttribute("required", "true");
             } else if(option === "delete") {
                // Set required
-            document.getElementById("helperId").setAttribute("required", "true");
+            document.getElementById("employeeId").setAttribute("required", "true");
             document.getElementById("name").setAttribute("required", "true");
-            document.getElementById("helperEmail").setAttribute("required", "true");
-            document.getElementById("helperPhone").setAttribute("required", "true");
+            document.getElementById("employeeEmail").setAttribute("required", "true");
+            document.getElementById("employeePhone").setAttribute("required", "true");
             document.getElementById("city").setAttribute("required", "true");
             document.getElementById("county").setAttribute("required", "true");
             document.getElementById("state").setAttribute("required", "true");
@@ -102,10 +102,10 @@
         
         function hardReset() {
             // Set required
-            document.getElementById("helperId").setAttribute("required", "true");
+            document.getElementById("employeeId").setAttribute("required", "true");
             document.getElementById("name").setAttribute("required", "true");
-            document.getElementById("helperEmail").setAttribute("required", "true");
-            document.getElementById("helperPhone").setAttribute("required", "true");
+            document.getElementById("employeeEmail").setAttribute("required", "true");
+            document.getElementById("employeePhone").setAttribute("required", "true");
             document.getElementById("city").setAttribute("required", "true");
             document.getElementById("county").setAttribute("required", "true");
             document.getElementById("state").setAttribute("required", "true");

@@ -1,43 +1,43 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-	<title>Helper</title>
+	<title>HelpCenter</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <a class="heading" href="/index.html">Home</a>
-	<h1 class="heading">Helper</h1>
+	<h1 class="heading">HelpCenter</h1>
 
 	<fieldset>
         <legend>Add, Update or Delete</legend>
         
-		<form action="#" th:action="@{/helper}" th:object="${helper}" method="post">
+		<form action="#" th:action="@{/helpCenter}" th:object="${helpCenter}" method="post">
 
             <table>
                 <tr>
                     <td><p>Option: </p></td>
-                    <td><select id ="helperOption" name="action" onchange="update()" th:field="*{aud}">
+                    <td><select id ="helpCenterOption" name="action" onchange="update()" th:field="*{aud}">
                         <option value="add">Add</option>
                         <option value="update">Update</option>
                         <option value="delete">Delete</option>
                     </select></td>
                 </tr>
                 <tr>
-                    <td><p>Helper ID: </p></td>
-                    <td><input id="helperId" type="text" placeholder="h****" maxlength="5" required th:field="*{hid}" /></td>
+                    <td><p>HelpCenter ID: </p></td>
+                    <td><input id="helpCenterId" type="text" placeholder="e****" maxlength="5" required th:field="*{cid}" /></td>
                 </tr>
                 <tr>
                     <td><p>Name: </p></td>
                     <td><input id="name" type="text" maxlength="20" required th:field="*{name}" /></td>
                 </tr>
                 <tr>
-                    <td><p>Email: </p></td>
-                    <td><input id="helperEmail" type="text" required th:field="*{email}"/></td>
+                    <td><p>Address: </p></td>
+                    <td><input id="helpCenterAddress" type="text" required th:field="*{address}"/></td>
                 </tr>
                 <tr>
                     <td><p>PhoneNo: </p></td>
-                    <td><input id="helperPhone" maxlength="10" type="text" required th:field="*{phoneNo}"/></td>
+                    <td><input id="helpCenterPhone" maxlength="10" type="text" required th:field="*{phoneNo}"/></td>
                 </tr>
                 <tr>
                     <td><p>City: </p></td>
@@ -52,10 +52,6 @@
                     <td><input id="state" type="text" maxlength="15" th:field="*{state}"/></td>
                 </tr>
                 <tr>
-                    <td><p>Description: </p></td>
-                    <td><input id="description" type="text" maxlength="180" th:field="*{description}"/></td>
-                </tr>
-                <tr>
                     <td><input type="reset" value="Reset" onclick="hardReset()"/></td>
                     <td><input type="submit" value="Submit" /></td>
                 </tr>
@@ -66,50 +62,46 @@
     
     <script type="text/javascript">
         function update() {
-            var option = document.getElementById("helperOption").value;
+            var option = document.getElementById("helpCenterOption").value;
             if(option === "add") {
                 // Set required
-            document.getElementById("helperId").setAttribute("required", "true");
+            document.getElementById("helpCenterId").setAttribute("required", "true");
             document.getElementById("name").setAttribute("required", "true");
-            document.getElementById("helperEmail").setAttribute("required", "true");
-            document.getElementById("helperPhone").setAttribute("required", "true");
+            document.getElementById("helpCenterAddress").setAttribute("required", "true");
+            document.getElementById("helpCenterPhone").setAttribute("required", "true");
             document.getElementById("city").setAttribute("required", "true");
             document.getElementById("county").setAttribute("required", "true");
             document.getElementById("state").setAttribute("required", "true");
-            document.getElementById("description").setAttribute("required", "true");
             } else if(option === "update") {
                 // Set required
-            document.getElementById("helperId").setAttribute("required", "true");
+            document.getElementById("helpCenterId").setAttribute("required", "true");
             document.getElementById("name").setAttribute("required", "true");
-            document.getElementById("helperEmail").setAttribute("required", "true");
-            document.getElementById("helperPhone").setAttribute("required", "true");
+            document.getElementById("helpCenterAddress").setAttribute("required", "true");
+            document.getElementById("helpCenterPhone").setAttribute("required", "true");
             document.getElementById("city").setAttribute("required", "true");
             document.getElementById("county").setAttribute("required", "true");
             document.getElementById("state").setAttribute("required", "true");
-            document.getElementById("description").setAttribute("required", "true");
             } else if(option === "delete") {
                // Set required
-            document.getElementById("helperId").setAttribute("required", "true");
+            document.getElementById("helpCenterId").setAttribute("required", "true");
             document.getElementById("name").setAttribute("required", "true");
-            document.getElementById("helperEmail").setAttribute("required", "true");
-            document.getElementById("helperPhone").setAttribute("required", "true");
+            document.getElementById("helpCenterAddress").setAttribute("required", "true");
+            document.getElementById("helpCenterPhone").setAttribute("required", "true");
             document.getElementById("city").setAttribute("required", "true");
             document.getElementById("county").setAttribute("required", "true");
             document.getElementById("state").setAttribute("required", "true");
-            document.getElementById("description").setAttribute("required", "true");
             }
         }
         
         function hardReset() {
             // Set required
-            document.getElementById("helperId").setAttribute("required", "true");
+            document.getElementById("helpCenterId").setAttribute("required", "true");
             document.getElementById("name").setAttribute("required", "true");
-            document.getElementById("helperEmail").setAttribute("required", "true");
-            document.getElementById("helperPhone").setAttribute("required", "true");
+            document.getElementById("helpCenterAddress").setAttribute("required", "true");
+            document.getElementById("helpCenterPhone").setAttribute("required", "true");
             document.getElementById("city").setAttribute("required", "true");
             document.getElementById("county").setAttribute("required", "true");
             document.getElementById("state").setAttribute("required", "true");
-            document.getElementById("description").setAttribute("required", "true");
         }
     </script>
 
