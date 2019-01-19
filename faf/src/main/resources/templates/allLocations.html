@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>All Locations</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <a href="/index.html">Home</a>
+    <h1>Locations</h1>
+    <table>
+        <tr>
+            <th class="tableHeader">City</th>
+            <th class="tableHeader">County</th>
+            <th class="tableHeader">State</th>
+        </tr>
+        <tr class="hoverEffect" th:each="datum : ${data}">
+            <td class="result" th:text="${datum.getCity()}"></td>
+            <td class="result" th:text="${datum.getCounty()}"></td>
+            <td class="result" th:text="${datum.getState()}"></td>
+        </tr>
+    </table>
+</body>
+</html>

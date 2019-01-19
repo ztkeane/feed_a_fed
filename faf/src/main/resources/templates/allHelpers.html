@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>All Helpers</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <a href="/index.html">Home</a>
+    <h1>Helpers</h1>
+    <table>
+        <tr>
+            <th class="tableHeader">HID</th>
+            <th class="tableHeader">Name</th>
+            <th class="tableHeader">Email</th>
+            <th class="tableHeader">City</th>
+            <th class="tableHeader">County</th>
+            <th class="tableHeader">State</th>
+            <th class="tableHeader">Description</th>
+            <th class="tableHeader">PhoneNo</th>
+        </tr>
+        <tr class="hoverEffect" th:each="datum : ${data}">
+            <td class="result" th:text="${datum.getHid()}"></td>
+            <td class="result" th:text="${datum.getName()}"></td>
+            <td class="result" th:text="${datum.getEmail()}"></td>
+            <td class="result" th:text="${datum.getCity()}"></td>
+            <td class="result" th:text="${datum.getCounty()}"></td>
+            <td class="result" th:text="${datum.getState()}"></td>
+            <td class="result" th:text="${datum.getDescription()}"></td>
+            <td class="result" th:text="${datum.getPhoneNo()}"></td>
+        </tr>
+    </table>
+</body>
+</html>

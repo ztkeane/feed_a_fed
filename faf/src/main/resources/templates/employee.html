@@ -52,8 +52,8 @@
                     <td><input id="state" type="text" maxlength="15" th:field="*{state}"/></td>
                 </tr>
                 <tr>
-                    <td><p>Description: </p></td>
-                    <td><input id="description" type="text" maxlength="180" th:field="*{description}"/></td>
+                    <td><p>No. of Dependents: </p></td>
+                    <td><input id="dependents" type="text" maxlength="4" th:field="*{dependents}"/></td>
                 </tr>
                 <tr>
                     <td><input type="reset" value="Reset" onclick="hardReset()"/></td>
@@ -76,7 +76,7 @@
             document.getElementById("city").setAttribute("required", "true");
             document.getElementById("county").setAttribute("required", "true");
             document.getElementById("state").setAttribute("required", "true");
-            document.getElementById("description").setAttribute("required", "true");
+            document.getElementById("dependents").setAttribute("required", "true");
             } else if(option === "update") {
                 // Set required
             document.getElementById("employeeId").setAttribute("required", "true");
@@ -86,7 +86,7 @@
             document.getElementById("city").setAttribute("required", "true");
             document.getElementById("county").setAttribute("required", "true");
             document.getElementById("state").setAttribute("required", "true");
-            document.getElementById("description").setAttribute("required", "true");
+            document.getElementById("dependents").setAttribute("required", "true");
             } else if(option === "delete") {
                // Set required
             document.getElementById("employeeId").setAttribute("required", "true");
@@ -96,7 +96,7 @@
             document.getElementById("city").setAttribute("required", "true");
             document.getElementById("county").setAttribute("required", "true");
             document.getElementById("state").setAttribute("required", "true");
-            document.getElementById("description").setAttribute("required", "true");
+            document.getElementById("dependents").setAttribute("required", "true");
             }
         }
         
@@ -109,7 +109,7 @@
             document.getElementById("city").setAttribute("required", "true");
             document.getElementById("county").setAttribute("required", "true");
             document.getElementById("state").setAttribute("required", "true");
-            document.getElementById("description").setAttribute("required", "true");
+            document.getElementById("dependents").setAttribute("required", "true");
         }
     </script>
 
