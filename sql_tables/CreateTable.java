@@ -2,16 +2,16 @@
  |      Author:  Ashley Mains, Amelia Marglon, Suresh Devendran, Zach Keane
  |  Assignment:  Program #4: Database-driven Web Application
  |    Due Date:  December 4, 2018 3:30pm
- | 
+ |
  |      Course:  CSC 460 - Database Design
  |  Instructor:  Lester I. McCann, Ph.D.
  |         TAs:  Heuichan "Terrence" Lim, Bailey Nottingham
- | 
+ |
  | Description:  "Command line" program to create, populate, and drop tables.
- | 
+ |
  |    Language:  Java 1.8
  |       Input:  None
- | 
+ |
  | Deficiencies: - Manual some data scrubbing.
  *----------------------------------------------------------------------------*/
 
