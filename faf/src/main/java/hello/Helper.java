@@ -15,8 +15,8 @@ public class Helper {
     public String getAud() { return aud; }
     public void setAud(String aud) { this.aud = aud; }
     
-    public String getHid() { return eid; }
-    public void setHid(String eid) { this.eid = eid; }
+    public String getHid() { return hid; }
+    public void setHid(String eid) { this.hid = hid; }
     
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }
