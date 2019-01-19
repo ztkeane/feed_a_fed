@@ -48,13 +48,13 @@ public class EmployeeController {
         jdbcTemplate = new JdbcTemplate(dataSource);
     }
     
-    @GetMapping("/employee")
+    @GetMapping("/helper")
     public String doctorForm(Model model) {
         model.addAttribute("employee", new Employee());
-        return "employee";
+        return "success";
     }
     
-    private String aud;
+    /*private String aud;
     private String eid;
     private String name;
     private String email;
@@ -62,11 +62,12 @@ public class EmployeeController {
     private String county;
     private String state;
     private String phoneNo;
-    private int dependents;
+    private int dependents;*/
     
     @PostMapping("/employee")
     public String employeeSubmit(@ModelAttribute Employee employee) {
-        //FIRST, EID
+        return "success";
+        /*//FIRST, EID
         String eid = employee.getEid().toLowerCase();
         
         //EID does not start properly
@@ -92,7 +93,7 @@ public class EmployeeController {
             String name = employee.getName();
             //Ensure name has no numbers.
             for (int j = 0; j < name.length(); j++) {
-                if (!Character.isLetter(name.charAt(j))) && name.charAt(j) != " ") {
+                if (!Character.isLetter(name.charAt(j)) && name.charAt(j) != " ") {
                     System.out.println("Bad name.");
                     return "employee";
                 }
@@ -192,7 +193,7 @@ public class EmployeeController {
                 return "doctor";
             }
         }
-        return "success";
+        return "success";*/
     }
     
     /*@GetMapping("/deletePerson")
@@ -215,7 +216,7 @@ public class EmployeeController {
      |      Parameters:  Model
      |         Returns:  String, the HTML page.
      *------------------------------------------------------------------------*/
-    @GetMapping("/allDoctors")
+    /*@GetMapping("/allDoctors")
     public String allDoctors(Model model) {
         List<Doctor> allData = this.jdbcTemplate.query("select * from amains.doctor",
         new RowMapper<Doctor>() {
@@ -245,6 +246,6 @@ public class EmployeeController {
         });
         model.addAttribute("data", allData);
         return "/allDoctors";
-    }
+    }*/
     
 }

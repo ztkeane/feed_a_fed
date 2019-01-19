@@ -68,7 +68,7 @@ public class HelperController {
         System.out.println("helper aud is = " + helper.getAud());
         System.out.println("helper hid is = " + helper.getHid());
         
-        return "success"
+        return "success";
     }
     
     /*@GetMapping("/deletePerson")
