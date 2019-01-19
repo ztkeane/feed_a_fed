@@ -64,10 +64,58 @@ public class HelperController {
      *------------------------------------------------------------------------*/
     @PostMapping("/helper")
     public String helperSubmit(@ModelAttribute Helper helper) {
-        //FIRST, DID
-        System.out.println("helper aud is = " + helper.getAud());
-        System.out.println("helper hid is = " + helper.getHid());
         
+        if(doctor.getAud().equals("add")) {
+            System.out.println("Adding");
+            try {
+                jdbcTemplate.update("INSERT INTO ztkeane.helper VALUES ("
+                                    + "'" + helper.getHid().toLowerCase() + "', "
+                                    + "'" + helper.getName() + "', "
+                                    + "'" + helper.getEmail() + "', "
+                                    + "'" + doctor.getStatus() + "', "
+                                    + doctor.getDeptid() + ", "
+                                    + doctor.getOfficeno()
+                                    + ")"
+                                    );
+            }
+            catch (Exception e){
+                System.out.println(e.getMessage());
+                System.out.println("Duplicate Doctor DID entered!");
+                return "doctor";
+            }
+        }
+        else if(doctor.getAud().equals("update")) {
+            System.out.println("Updating");
+            try {
+                jdbcTemplate.update("UPDATE amains.doctor SET "
+                                    + "lname = '" + doctor.getLname() + "', "
+                                    + "fname = '" + doctor.getFname() + "', "
+                                    + "status = '" + doctor.getStatus() + "', "
+                                    + "deptId = " + doctor.getDeptid() + ", "
+                                    + "officeNo = " + doctor.getOfficeno() + " "
+                                    + "WHERE did = '" + doctor.getDid().toLowerCase() + "'"
+                                    );
+            }
+            catch (Exception e){
+                System.out.println(e.getMessage());
+                System.out.println("Doctor cannot be updated!");
+                return "doctor";
+            }
+        }
+        // if (doctor.getAud().equals("delete"))
+        else {
+            System.out.println("Deleting");
+            try {
+                jdbcTemplate.update("DELETE FROM amains.doctor "
+                                    + "WHERE did = '" + doctor.getDid().toLowerCase() + "'"
+                                    );
+            }
+            catch (Exception e){
+                System.out.println(e.getMessage());
+                System.out.println("Doctor cannot be deleted!");
+                return "doctor";
+            }
+        }
         return "success";
     }
     

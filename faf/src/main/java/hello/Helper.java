@@ -1,7 +1,6 @@
 package hello;
 
 public class Helper {
-    
     private String aud;
     private String hid;
     private String name;
@@ -10,13 +9,14 @@ public class Helper {
     private String county;
     private String state;
     private String description;
+    private String phoneNo;
     
     
     public String getAud() { return aud; }
     public void setAud(String aud) { this.aud = aud; }
     
     public String getHid() { return hid; }
-    public void setHid(String eid) { this.hid = hid; }
+    public void setHid(String hid) { this.hid = hid; }
     
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }
@@ -35,5 +35,8 @@ public class Helper {
     
     public String getDescription() { return description; }
     public void setDescription(String description) { this.description = description; }
+    
+    public String getPhoneNo() { return phoneNo; }
+    public void setPhoneNo(String phoneNo) { this.phoneNo = phoneNo; }
     
 }

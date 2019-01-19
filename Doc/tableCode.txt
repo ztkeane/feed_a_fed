@@ -18,7 +18,7 @@ SQL> create table helpCenter (
 SQL> create table employee (
   2  eid varchar2(5),
   3  name varchar2(20),
-  4  email varchar2(30),
+  4  email varchar2(100),    
   5  city varchar2(25),
   6  county varchar2(30),
   7  state varchar2(15),
@@ -27,14 +27,17 @@ SQL> create table employee (
  10  primary key (eid),
  11  foreign key (city, county, state) references location (city, county, state));
 
+
 SQL> create table helper (
   2  hid varchar2(5),
   3  name varchar2(20),
-  4  email varchar2(30),
-  5  description varchar2(180),
-  6  city varchar2(25),
-  7  county varchar2(30),
-  8  state varchar2(15),
-  9  primary key (hid),
- 10  foreign key (city, county, state) references location (city, county, state));
+  4  email varchar2(100),
+  5  phoneNo varchar2(10),
+  6  description varchar2(180),
+  7  city varchar2(25),
+  8  county varchar2(30),
+  9  state varchar2(15),
+ 10  primary key (hid),
+ 11  foreign key (city, county, state) references location (city, county, state));
+
 
