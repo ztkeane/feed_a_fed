@@ -1,0 +1,139 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Serving Web Content</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<h1 class="heading">CSC 460 Program 4</h1>
+	<h2 class="heading">Ashley, Amelia, Suresh and Zach.</h2>
+
+	<fieldset>
+		<legend>Add, Update or Delete</legend>
+		<div>
+			<form action="/patient">
+				<input type="submit" value="Patient" />
+			</form>
+			<form action="/doctor">
+				<input type="submit" value="Doctor" />
+			</form>
+			<form action="/nurse">
+				<input type="submit" value="Nurse" />
+			</form>
+			<form action="/pharmacist">
+				<input type="submit" value="Pharmacist" />
+			</form>
+			<form action="/staff">
+				<input type="submit" value="Staff" />
+			</form>
+		</div>
+	</fieldset>
+    
+    <table class="leftMargin375">
+    <tr>
+        <td>
+        <fieldset class="skinny1">
+            <legend>Add or Update</legend>
+            <div>
+                <form action="/treatment">
+                    <input type="submit" value="Patient Treatment" />
+                </form>
+                <form action="/payment">
+                    <input type="submit" value="Patient Payment" />
+                </form>
+            </div>
+        </fieldset>
+        </td>
+        <td>
+        <fieldset class="skinny2">
+            <legend>Update</legend>
+            <div>
+                <form action="/department">
+                    <input type="submit" value="Department" />
+                </form>
+            </div>
+        </fieldset>
+        </td>
+    </tr>
+    </table>
+    
+	<fieldset>
+		<legend>Queries</legend>
+		<div>
+            <table>
+                <tr>
+                    <td><form action="/query1">
+                        <input type="submit" value="Query1" />
+                    </form></td>
+                    <td class="label"><p class="smallMargin">Look up patient records.</p></td>
+                </tr>
+                <tr>
+                    <td><form action="/query2">
+                        <input type="submit" value="Query2" />
+                    </form></td>
+                    <td class="label"><p class="smallMargin">Search for doctors by department.</p></td>
+                </tr>
+                <tr>
+                    <td><form action="/query3">
+                        <input type="submit" value="Query3" />
+                    </form></td>
+                    <td class="label"><p class="smallMargin">View currently hospitalized patients ( >5 days with unpaid fees ).</p></td>
+                </tr>
+                <tr>
+                    <td><form action="/query4">
+                        <input type="submit" value="Query4" />
+                    </form></td>
+                    <td class="label"><p class="smallMargin">Search for patient medicine and payment information.</p></td>
+                </tr>
+            </table>
+		</div>
+	</fieldset>
+    
+    <fieldset>
+		<legend>View Table</legend>
+		<div>
+            <table>
+                <tr>
+                    <td><form action="/allPatients">
+                        <input type="submit" value="Patients" />
+                    </form></td>
+                    <td><form action="/allDoctors">
+                        <input type="submit" value="Doctors" />
+                    </form></td>
+                    <td><form action="/allNurses">
+                        <input type="submit" value="Nurses" />
+                    </form></td>
+                    <td><form action="/allPharmacists">
+                        <input type="submit" value="Pharmacists" />
+                    </form></td>
+                    <td><form action="/allStaff">
+                        <input type="submit" value="Staff" />
+                    </form></td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <td><form action="/allTreatments">
+                        <input type="submit" value="Treatments" />
+                    </form></td>
+                    <td><form action="/allPayments">
+                        <input type="submit" value="Payments" />
+                    </form></td>
+                    <td><form action="/allDepartments">
+                        <input type="submit" value="Department" />
+                    </form></td>
+                </tr>
+            </table>
+		</div>
+	</fieldset>
+
+	<h5 class="heading">Thank you Dr.Lester I. McCann, Heuichan "Terrence" Lim and Bailey Nottingham.</h5>
+
+<!-- <form action="/greeting">
+    <input type="submit" value="Greeting" />
+</form> -->
+
+
+</body>
+</html>

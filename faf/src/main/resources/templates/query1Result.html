@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Query #1</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <a href="/index.html">Home</a>
+    <h1>Query #1 Result</h1>
+    
+    <div>
+    <h3>Search Values:</h3>
+    <table>
+        <tr>
+            <td class="alignRight"><b>First Name: </b></td>
+            <td><p class="noMargin" th:text="${query1.getFname()}"></p></td>
+        </tr>
+        <tr>
+            <td class="alignRight"><b>Last Name: </b></td>
+            <td><p class="noMargin" th:text="${query1.getLname()}"></p></td>
+        </tr>
+        <tr>
+            <td class="alignRight"><b>DOB: </b></td>
+            <td><p class="noMargin" th:text="${query1.getDob()}"></p></td>
+        </tr>
+    </table>
+    </div>
+    
+    <div>
+    <h3>Record(s):</h3>
+    <table>
+        <tr>
+            <th class="tableHeader">PID</th>
+            <th class="tableHeader">Patient Name</th>
+            <th class="tableHeader">Gender</th>
+            <th class="tableHeader">DOB</th>
+            <th class="tableHeader">Last Visit</th>
+            <th class="tableHeader">Visit Reason</th>
+            <th class="tableHeader">Treatment</th>
+            <th class="tableHeader">DID</th>
+        </tr>
+        <tr class="hoverEffect" th:each="datum : ${data}">
+            <td class="result" th:text="${datum.getPid()}"></td>
+            <td class="result" th:text="${datum.getPname()}"></td>
+            <td class="result" th:text="${datum.getGender()}"></td>
+            <td class="result" th:text="${datum.getDob()}"></td>
+            <td class="result" th:text="${datum.getVisitdate()}"></td>
+            <td class="result" th:text="${datum.getVisitrsn()}"></td>
+            <td class="result" th:text="${datum.getTreatment()}"></td>
+            <td class="result" th:text="${datum.getDid()}"></td>
+        </tr>
+    </table>
+    </div>
+    
+</body>
+</html>

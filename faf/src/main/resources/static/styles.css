@@ -1,0 +1,90 @@
+/***********************************************/
+/* Suresh */
+
+body {
+	background-color:  hsl(240, 68%, 97%);
+}
+
+fieldset {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	width: 500px;
+	margin-left: 375px;
+	padding: 10px;
+	border-color: black;
+	border-radius: 4px 4px 4px 4px;
+}
+
+.leftMargin375 {
+    margin-left: 375px;
+}
+
+.skinny1 {
+    width: 300px;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-bottom: 0px;
+}
+.skinny2 {
+    width: 170px;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-bottom: 0px;
+}
+
+.heading {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-left: 375px;
+	width: 500px;
+}
+
+form { 
+	display: inline; 
+}
+
+/***********************************************/
+/* Ashley */
+
+table {
+	border-collapse: collapse;
+}
+
+.tableHeader {
+	border: 1px solid black;
+	background-color: #75E461;
+	text-align: left;
+	padding-left: 3px;
+	padding-right: 20px;
+}
+
+.result {
+	border: 1px solid black;
+	padding-left: 3px;
+	padding-right: 20px;
+}
+
+/*.hoverEffect:hover {
+	background-color: #FFFF5C;
+}*/
+
+.alignRight {
+	text-align: right;
+}
+
+.label {
+	padding-left: 5px;
+}
+
+.description {
+	width: 500px;
+	margin-left: 375px;
+}
+
+.noMargin {
+	margin: 0px;
+}
+
+.smallMargin {
+    margin: 5px;
+}

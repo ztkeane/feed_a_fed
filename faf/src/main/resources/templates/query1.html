@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Query #1</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <a class="heading" href="/index.html">Home</a>
+    <h1 class="heading">Query #1</h1>
+    
+    <p class="description">When patients visit the hospital, they all must first check-in with the receptionist. Then, the receptionist searches for the patient's most recent record with the patient's first name, last name, and DOB.</p>
+    
+    <fieldset>
+        <form action="#" th:action="@{/query1}" th:object="${query1}" method="post">
+            
+            <p>Last Name: <input type="text" required th:field="*{lname}" /></p>
+			<p>First Name: <input type="text" required th:field="*{fname}" /></p>
+            <p>DOB: <input type="date" required th:field="*{dob}" /></p>
+            
+            <p><input type="reset" value="Reset" /> <input type="submit" value="Submit" /></p>
+        </form>
+    </fieldset>
+
+</body>
+</html>
