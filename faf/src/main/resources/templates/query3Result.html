@@ -1,28 +1,28 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Query #1</title>
+    <title>Query #3</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <a href="/index.html">Home</a>
-    <h1>Helper nearby within the Federal Employee's City, County, or State.</h1>
+    <h1>HelpCenter nearby Compassionate Americans City, County, or State.</h1>
     
     <div>
     <h3>Search Values:</h3>
     <table>
         <tr>
             <td class="alignRight"><b>City: </b></td>
-            <td><p class="noMargin" th:text="${query1.getCity()}"></p></td>
+            <td><p class="noMargin" th:text="${query3.getCity()}"></p></td>
         </tr>
         <tr>
             <td class="alignRight"><b>County: </b></td>
-            <td><p class="noMargin" th:text="${query1.getCounty()}"></p></td>
+            <td><p class="noMargin" th:text="${query3.getCounty()}"></p></td>
         </tr>
         <tr>
             <td class="alignRight"><b>State: </b></td>
-            <td><p class="noMargin" th:text="${query1.getState()}"></p></td>
+            <td><p class="noMargin" th:text="${query3.getState()}"></p></td>
         </tr>
     </table>
     </div>
@@ -31,22 +31,22 @@
     <h3>Record(s):</h3>
     <table>
         <tr>
-            <th class="tableHeader">HID</th>
-            <th class="tableHeader">Helper Name</th>
-            <th class="tableHeader">Email</th>
+            <th class="tableHeader">CID</th>
+            <th class="tableHeader">Helper Center</th>
+            <th class="tableHeader">Address</th>
             <th class="tableHeader">City</th>
             <th class="tableHeader">County</th>
             <th class="tableHeader">State</th>
-            <th class="tableHeader">Description</th>
+            <th class="tableHeader">PhoneNo</th>
         </tr>
         <tr class="hoverEffect" th:each="datum : ${data}">
-            <td class="result" th:text="${datum.getHid()}"></td>
+            <td class="result" th:text="${datum.getCid()}"></td>
             <td class="result" th:text="${datum.getName()}"></td>
-            <td class="result" th:text="${datum.getEmail()}"></td>
+            <td class="result" th:text="${datum.getAddress()}"></td>
             <td class="result" th:text="${datum.getCity()}"></td>
             <td class="result" th:text="${datum.getCounty()}"></td>
             <td class="result" th:text="${datum.getState()}"></td>
-            <td class="result" th:text="${datum.getDescription()}"></td>
+            <td class="result" th:text="${datum.getPhoneNo()}"></td>
         </tr>
     </table>
     </div>
