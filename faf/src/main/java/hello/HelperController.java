@@ -72,33 +72,37 @@ public class HelperController {
                                     + "'" + helper.getHid().toLowerCase() + "', "
                                     + "'" + helper.getName() + "', "
                                     + "'" + helper.getEmail() + "', "
-                                    + "'" + doctor.getStatus() + "', "
-                                    + doctor.getDeptid() + ", "
-                                    + doctor.getOfficeno()
+                                    + "'" + helper.getPhoneNo() + "', "
+                                    + "'" + helper.getDescription() + "', "
+                                    + "'" + helper.getCity() + "', "
+                                    + "'" + helper.getCounty() + "', "
+                                    + "'" + helper.getState() + "' "
                                     + ")"
                                     );
             }
             catch (Exception e){
                 System.out.println(e.getMessage());
-                System.out.println("Duplicate Doctor DID entered!");
-                return "doctor";
+                System.out.println("Duplicate helper HID entered!");
+                return "helper";
             }
         }
         else if(doctor.getAud().equals("update")) {
             System.out.println("Updating");
             try {
-                jdbcTemplate.update("UPDATE amains.doctor SET "
-                                    + "lname = '" + doctor.getLname() + "', "
-                                    + "fname = '" + doctor.getFname() + "', "
-                                    + "status = '" + doctor.getStatus() + "', "
-                                    + "deptId = " + doctor.getDeptid() + ", "
-                                    + "officeNo = " + doctor.getOfficeno() + " "
-                                    + "WHERE did = '" + doctor.getDid().toLowerCase() + "'"
+                jdbcTemplate.update("UPDATE ztkeane.helper SET "
+                                    + "name = '" + helper.getName() + "', "
+                                    + "email = '" + helper.getEmail() + "', "
+                                    + "phoneNo = '" + helper.getPhoneNo() + "', "
+                                    + "description = '" + helper.getDescription() + ", "
+                                    + "city = '" + helper.getCity() + "', "
+                                    + "county = '" + helper.getCounty() + "', "
+                                    + "state = '" + helper.getState() + "' "
+                                    + "WHERE hid = '" + helper.getHid().toLowerCase() + "'"
                                     );
             }
             catch (Exception e){
                 System.out.println(e.getMessage());
-                System.out.println("Doctor cannot be updated!");
+                System.out.println("Helper cannot be updated!");
                 return "doctor";
             }
         }
@@ -106,8 +110,8 @@ public class HelperController {
         else {
             System.out.println("Deleting");
             try {
-                jdbcTemplate.update("DELETE FROM amains.doctor "
-                                    + "WHERE did = '" + doctor.getDid().toLowerCase() + "'"
+                jdbcTemplate.update("DELETE FROM ztkeane.helper "
+                                    + "WHERE hid = '" + helper.getHid().toLowerCase() + "'"
                                     );
             }
             catch (Exception e){

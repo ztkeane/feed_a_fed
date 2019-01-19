@@ -132,68 +132,63 @@ public class EmployeeController {
             }
             
         }
-        System.out.println("COMPLETE Doctor valid!");
-        
-        // setting the correct did back to Doctor object
-        doctor.setDid(did);
-        
-        System.out.println(doctor.getDid().toLowerCase() +" "+  doctor.getLname() +" "+  doctor.getFname() +" "+ doctor.getDob()+" "+ doctor.getStatus()+" "+ doctor.getDeptid()+" "+ doctor.getOfficeno());
-        
-        // sql query to insert the doctor object
+        System.out.println("COMPLETE Doctor valid!");*/
         
         if(doctor.getAud().equals("add")) {
             System.out.println("Adding");
             try {
-                jdbcTemplate.update("INSERT INTO amains.doctor VALUES ("
-                                    + "'" + doctor.getDid().toLowerCase() + "', "
-                                    + "'" + doctor.getLname() + "', "
-                                    + "'" + doctor.getFname() + "', "
-                                    + "TO_DATE ('" + doctor.getDob() + "', 'YYYY-MM-DD'), "
-                                    + "'" + doctor.getStatus() + "', "
-                                    + doctor.getDeptid() + ", "
-                                    + doctor.getOfficeno()
+                jdbcTemplate.update("INSERT INTO ztkeane.employee VALUES ("
+                                    + "'" + employee.getEid().toLowerCase() + "', "
+                                    + "'" + employee.getName() + "', "
+                                    + "'" + employee.getEmail() + "', "
+                                    + "'" + employee.getCity() + "', "
+                                    + "'" + employee.getCounty() + "', "
+                                    + "'" + employee.getState() + "', "
+                                    + "'" + employee.getPhoneNo() + "', "
+                                    + employee.getDependents()
                                     + ")"
                                     );
             }
             catch (Exception e){
                 System.out.println(e.getMessage());
-                System.out.println("Duplicate Doctor DID entered!");
-                return "doctor";
+                System.out.println("Duplicate employee EID entered!");
+                return "employee";
             }
         }
         else if(doctor.getAud().equals("update")) {
             System.out.println("Updating");
             try {
-                jdbcTemplate.update("UPDATE amains.doctor SET "
-                                    + "lname = '" + doctor.getLname() + "', "
-                                    + "fname = '" + doctor.getFname() + "', "
-                                    + "status = '" + doctor.getStatus() + "', "
-                                    + "deptId = " + doctor.getDeptid() + ", "
-                                    + "officeNo = " + doctor.getOfficeno() + " "
-                                    + "WHERE did = '" + doctor.getDid().toLowerCase() + "'"
+                jdbcTemplate.update("UPDATE ztkeane.employee SET "
+                                    + "name = '" + employee.getName() + "', "
+                                    + "email = '" + employee.getEmail() + "', "
+                                    + "city = '" + employee.getCity() + "', "
+                                    + "county = '" + employee.getCounty() + "', "
+                                    + "state = '" + employee.getState() + "' "
+                                    + "phoneNo = '" + employee.getPhoneNo() + "', "
+                                    + "WHERE eid = '" + employee.getEid().toLowerCase() + "'"
                                     );
             }
             catch (Exception e){
                 System.out.println(e.getMessage());
-                System.out.println("Doctor cannot be updated!");
-                return "doctor";
+                System.out.println("Employee cannot be updated!");
+                return "employee";
             }
         }
         // if (doctor.getAud().equals("delete"))
         else {
             System.out.println("Deleting");
             try {
-                jdbcTemplate.update("DELETE FROM amains.doctor "
-                                    + "WHERE did = '" + doctor.getDid().toLowerCase() + "'"
+                jdbcTemplate.update("DELETE FROM ztkeane.employee "
+                                    + "WHERE eid = '" + employee.getEid().toLowerCase() + "'"
                                     );
             }
             catch (Exception e){
                 System.out.println(e.getMessage());
-                System.out.println("Doctor cannot be deleted!");
-                return "doctor";
+                System.out.println("Employee cannot be deleted!");
+                return "employee";
             }
         }
-        return "success";*/
+        return "success";
     }
     
     /*@GetMapping("/deletePerson")
