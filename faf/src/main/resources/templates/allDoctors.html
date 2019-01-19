@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>All Doctors</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <a href="/index.html">Home</a>
+    <h1>Doctors</h1>
+    <table>
+        <tr>
+            <th class="tableHeader">DID</th>
+            <th class="tableHeader">Last Name</th>
+            <th class="tableHeader">First Name</th>
+            <th class="tableHeader">DOB</th>
+            <th class="tableHeader">Status</th>
+            <th class="tableHeader">Dept. Id</th>
+            <th class="tableHeader">Office #</th>
+        </tr>
+        <tr class="hoverEffect" th:each="datum : ${data}">
+            <td class="result" th:text="${datum.getDid()}"></td>
+            <td class="result" th:text="${datum.getLname()}"></td>
+            <td class="result" th:text="${datum.getFname()}"></td>
+            <td class="result" th:text="${datum.getDob()}"></td>
+            <td class="result" th:text="${datum.getStatus()}"></td>
+            <td class="result" th:text="${datum.getDeptid()}"></td>
+            <td class="result" th:text="${datum.getOfficeno()}"></td>
+        </tr>
+    </table>
+</body>
+</html>

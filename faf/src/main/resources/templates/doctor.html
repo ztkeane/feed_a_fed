@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Doctor</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <a class="heading" href="/index.html">Home</a>
+	<h1 class="heading">Doctor</h1>
+
+	<fieldset>
+        <legend>Add, Update or Delete</legend>
+        
+		<form action="#" th:action="@{/doctor}" th:object="${doctor}" method="post">
+
+            <table>
+                <tr>
+                    <td><p>Option: </p></td>
+                    <td><select id="doctorOption" name="action" onchange="update()" th:field="*{aud}">
+                        <option value="add">Add</option>
+                        <option value="update">Update</option>
+                        <option value="delete">Delete</option>
+                    </select></td>
+                </tr>
+                <tr>
+                    <td><p>Doctor ID: </p></td>
+                    <td><input id="doctorId" type="text" placeholder="dr*****" maxlength="7" required th:field="*{did}" /></td>
+                </tr>
+                <tr>
+                    <td><p>Last Name: </p></td>
+                    <td><input id="doctorLname" type="text" maxlength="20" required th:field="*{lname}" /></td>
+                </tr>
+                <tr>
+                    <td><p>First Name: </p></td>
+                    <td><input id="doctorFname" type="text" maxlength="20" required th:field="*{fname}" /></td>
+                </tr>
+                <tr>
+                    <td><p>DOB: </p></td>
+                    <td><input id="doctorDob" type="date" required th:field="*{dob}"/></td>
+                </tr>
+                <tr>
+                    <td><p>Status: </p></td>
+                    <td><select id="doctorStatus" name="status" th:field="*{status}">
+                        <option value="trainee">Trainee</option>
+                        <option value="tenured">Tenured</option>
+                        <option value="visiting">Visiting</option>
+                    </select></td>
+                </tr>
+                <tr>
+                    <td><p>Dept. ID: </p></td>
+                    <td><input id="doctorDeptid" type="text" maxlength="11" th:field="*{deptid}"/></td>
+                </tr>
+                <tr>
+                    <td><p>Office #: </p></td>
+                    <td><input id="doctorOfficeno" type="text" maxlength="11" th:field="*{officeno}"/></td>
+                </tr>
+                <tr>
+                    <td><input type="reset" value="Reset" onclick="hardReset()"/></td>
+                    <td><input type="submit" value="Submit" /></td>
+                </tr>
+            </table>
+            
+		</form>
+	</fieldset>
+    
+    <script type="text/javascript">
+        function update() {
+            var option = document.getElementById("doctorOption").value;
+            if(option === "add") {
+                // Set required
+                document.getElementById("doctorLname").setAttribute("required", "true");
+                document.getElementById("doctorFname").setAttribute("required", "true");
+                document.getElementById("doctorDob").setAttribute("required", "true");
+                // Remove disabled
+                document.getElementById("doctorLname").removeAttribute("disabled");
+                document.getElementById("doctorFname").removeAttribute("disabled");
+                document.getElementById("doctorDob").removeAttribute("disabled");
+                document.getElementById("doctorStatus").removeAttribute("disabled");
+                document.getElementById("doctorDeptid").removeAttribute("disabled");
+                document.getElementById("doctorOfficeno").removeAttribute("disabled");
+            } else if(option === "update") {
+                //Set disabled
+                document.getElementById("doctorDob").setAttribute("disabled", "true");
+                // Remove required
+                document.getElementById("doctorLname").removeAttribute("required");
+                document.getElementById("doctorFname").removeAttribute("required");
+                document.getElementById("doctorDob").removeAttribute("required");
+                // Remove disabled
+                document.getElementById("doctorLname").removeAttribute("disabled");
+                document.getElementById("doctorFname").removeAttribute("disabled");
+                document.getElementById("doctorStatus").removeAttribute("disabled");
+                document.getElementById("doctorDeptid").removeAttribute("disabled");
+                document.getElementById("doctorOfficeno").removeAttribute("disabled");
+            } else if(option === "delete") {
+                // Set disabled
+                document.getElementById("doctorLname").setAttribute("disabled", "true");
+                document.getElementById("doctorFname").setAttribute("disabled", "true");
+                document.getElementById("doctorDob").setAttribute("disabled", "true");
+                document.getElementById("doctorStatus").setAttribute("disabled", "true");
+                document.getElementById("doctorDeptid").setAttribute("disabled", "true");
+                document.getElementById("doctorOfficeno").setAttribute("disabled", "true");
+                // Remove required
+                document.getElementById("doctorLname").removeAttribute("required");
+                document.getElementById("doctorFname").removeAttribute("required");
+                document.getElementById("doctorDob").removeAttribute("required");
+            }
+        }
+        
+        function hardReset() {
+            // Set required
+            document.getElementById("doctorLname").setAttribute("required", "true");
+            document.getElementById("doctorFname").setAttribute("required", "true");
+            document.getElementById("doctorDob").setAttribute("required", "true");
+            // Remove disabled
+            document.getElementById("doctorLname").removeAttribute("disabled");
+            document.getElementById("doctorFname").removeAttribute("disabled");
+            document.getElementById("doctorDob").removeAttribute("disabled");
+            document.getElementById("doctorStatus").removeAttribute("disabled");
+            document.getElementById("doctorDeptid").removeAttribute("disabled");
+            document.getElementById("doctorOfficeno").removeAttribute("disabled");
+        }
+    </script>
+
+</body>
+</html>
