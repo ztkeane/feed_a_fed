@@ -134,7 +134,7 @@ public class EmployeeController {
         }
         System.out.println("COMPLETE Doctor valid!");*/
         
-        if(doctor.getAud().equals("add")) {
+        if(employee.getAud().equals("add")) {
             System.out.println("Adding");
             try {
                 jdbcTemplate.update("INSERT INTO ztkeane.employee VALUES ("
@@ -155,7 +155,7 @@ public class EmployeeController {
                 return "employee";
             }
         }
-        else if(doctor.getAud().equals("update")) {
+        else if(employee.getAud().equals("update")) {
             System.out.println("Updating");
             try {
                 jdbcTemplate.update("UPDATE ztkeane.employee SET "

@@ -65,7 +65,7 @@ public class HelperController {
     @PostMapping("/helper")
     public String helperSubmit(@ModelAttribute Helper helper) {
         
-        if(doctor.getAud().equals("add")) {
+        if(helper.getAud().equals("add")) {
             System.out.println("Adding");
             try {
                 jdbcTemplate.update("INSERT INTO ztkeane.helper VALUES ("
@@ -86,7 +86,7 @@ public class HelperController {
                 return "helper";
             }
         }
-        else if(doctor.getAud().equals("update")) {
+        else if(helper.getAud().equals("update")) {
             System.out.println("Updating");
             try {
                 jdbcTemplate.update("UPDATE ztkeane.helper SET "
