@@ -1,18 +1,7 @@
 /*----------------------------------------------------------------------------*
- |      Author:  Ashley Mains, Amelia Marglon, Suresh Devendran, Zach Keane
- |  Assignment:  Program #4: Database-driven Web Application
- |    Due Date:  December 4, 2018 3:30pm
- |
- |      Course:  CSC 460 - Database Design
- |  Instructor:  Lester I. McCann, Ph.D.
- |         TAs:  Heuichan "Terrence" Lim, Bailey Nottingham
- |
- | Description:  "Command line" program to create, populate, and drop tables.
- |
- |    Language:  Java 1.8
- |       Input:  None
- |
- | Deficiencies: - Manual some data scrubbing.
+ |      Author:  Suresh Devendran, Zach Keane
+ |  Assignment:  Feed A Fed
+ | export CLASSPATH=/opt/oracle/product/10.2.0/client/jdbc/lib/ojdbc14.jar:${CLASSPATH}
  *----------------------------------------------------------------------------*/
 
 import java.io.*;
@@ -89,12 +78,12 @@ public class CreateTable {
                 System.exit(-1);
                 
             }
-            String myStatement = "insert into ztkeane." + tableName + " values ('";
+            String myStatement = "insert into ztkeane." + tableName.toLowerCase() + " values ('";
             //Split on tabs and store in info[]
             String [] info = in.nextLine().split("\t");
-            if (tableName.equals("helper")) {
+            if (tableName.equals("Helper")) {
                 if (info.length != 7) {
-                    System.err.println("helper should have 9 fields.");
+                    System.err.println("helper should have 9 fields. It has " + info.length);
                     System.exit(-1);
                 }
                 String hid = info[0];
@@ -106,9 +95,9 @@ public class CreateTable {
                 String state = info[6];
                 myStatement += hid + "', '" + name + "', '" + email + "', '" + description + "', '" + city + "', '" + county + "', '" + state + "')";
             }
-            else if (tableName.equals("employee")) {
-                if (info.length != 6) {
-                    System.err.println("employee should have 6 fields.");
+            else if (tableName.equals("Employee")) {
+                if (info.length != 8) {
+                    System.err.println("employee should have 8 fields. It has " + info.length);
                     System.exit(-1);
                 }
                 String eid = info[0];
@@ -121,9 +110,9 @@ public class CreateTable {
                 int integer = Integer.parseInt(info[7]);
                 myStatement += eid + "', '" + name + "', '" + email + "', '" + city + "', '" + county + "', '" + state + "', '" + phoneNo + "', " + integer + ")";
             }
-            else if (tableName.equals("helpCenter")) {
+            else if (tableName.equals("HelpCenter")) {
                 if (info.length != 7) {
-                    System.err.println("helpCenter should have 7 fields.");
+                    System.err.println("helpCenter should have 7 fields. It has " + info.length);
                     System.exit(-1);
                 }
                 String cid = info[0];
@@ -135,9 +124,13 @@ public class CreateTable {
                 String state = info[6];
                 myStatement += cid + "', '" + name + "', '" + address + "', '" + phoneNo + "', '" + city + "', '" + county + "', '" + state + "')";
             }
-            else if (tableName.equals("location")) {
+            else if (tableName.equals("Location")) {
                 if (info.length != 3) {
-                    System.err.println("location should have 3 fields.");
+                    System.err.println("location should have 3 fields. It has " + info.length);
+                    for (int i = 0; i < info.length; i++) {
+                        System.out.println(info[i]);
+                    }
+                    System.exit(-1);
                 }
                 String city = info[0];
                 String county = info[1];
@@ -168,6 +161,7 @@ public class CreateTable {
                 //Standard SQL error handling.
                 System.err.println("*** SQLException:  "
                                    + "Could not fetch query results for entry number " + (counter + 1));
+                System.err.println(myStatement);
                 System.exit(-1);
             }
         }

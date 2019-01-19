@@ -4,4 +4,4 @@
 #print variable on a screen
 #echo $STRING
 
-scp -r program4_template/ @lectura.cs.arizona.edu:
+scp -r faf/ ztkeane@lectura.cs.arizona.edu:
