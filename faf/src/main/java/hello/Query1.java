@@ -1,7 +1,7 @@
 /*---------------------------------------------------------------------------*
  | Class <Query1>
  *---------------------------------------------------------------------------*
- |        Author:  Ashley Mains, Amelia Marglon, Suresh Devendran, Zach Keane
+ |        Author:  Suresh Devendran, Zach Keane
  |       Purpose:  Stores information provided in query 1.
  | Inherits From:  None.
  |    Interfaces:  None.
@@ -17,17 +17,17 @@ package hello;
 
 public class Query1 {
 
-    private String lname;
-    private String fname;
-    private String dob;
+    private String city;
+    private String county;
+    private String state;
 
-    public String getLname() { return lname; }
-    public void setLname(String lname) { this.lname = lname; }
+    public String getCity() { return city; }
+    public void setCity(String city) { this.city = city; }
 
-    public String getFname() { return fname; }
-    public void setFname(String fname) { this.fname = fname; }
+    public String getCounty() { return county; }
+    public void setCounty(String county) { this.county = county; }
     
-    public String getDob() { return dob; }
-    public void setDob(String dob) { this.dob = dob; }
+    public String getState() { return state; }
+    public void setState(String state) { this.state = state; }
     
 }

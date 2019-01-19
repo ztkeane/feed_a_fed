@@ -1,7 +1,7 @@
 /*---------------------------------------------------------------------------*
  | Class <Query1Result>
  *---------------------------------------------------------------------------*
- |        Author:  Ashley Mains, Amelia Marglon, Suresh Devendran, Zach Keane
+ |        Author:  Suresh Devendran, Zach Keane
  |       Purpose:  Stores tuple information from Query1.
  | Inherits From:  None.
  |    Interfaces:  None.
@@ -17,37 +17,37 @@ package hello;
 
 public class Query1Result {
 
-    private String pid;
-    private String pname; // First + last name
-    private String gender;
-    private String dob;
-    private String visitdate;
-    private String visitrsn;
-    private String treatment;
-    private String did;
+    private String hid;
+    private String name;
+    private String email;
+    private String city;
+    private String county;
+    private String state;
+    private String phoneNo;
+    private String description;
     
-    public String getPid() { return pid; }
-    public void setPid(String pid) { this.pid = pid; }
-
-    public String getPname() { return pname; }
-    public void setPname(String pname) { this.pname = pname; }
+    public String getHid() { return hid; }
+    public void setHid(String hid) { this.hid = hid; }
     
-    public String getGender() { return gender; }
-    public void setGender(String gender) { this.gender = gender; }
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
     
-    public String getDob() { return dob; }
-    public void setDob(String dob) { this.dob = dob; }
+    public String getEmail() { return email; }
+    public void setEmail(String email) { this.email = email; }
     
-    public String getVisitdate() { return visitdate; }
-    public void setVisitdate(String visitdate) { this.visitdate = visitdate; }
+    public String getCity() { return city; }
+    public void setCity(String city) {this.city = city; }
     
-    public String getVisitrsn() { return visitrsn; }
-    public void setVisitrsn(String visitrsn) { this.visitrsn = visitrsn; }
+    public String getCounty() { return county; }
+    public void setCounty(String county) { this.county = county; }
     
-    public String getTreatment() { return treatment; }
-    public void setTreatment(String treatment) { this.treatment = treatment; }
+    public String getState() { return state; }
+    public void setState(String state) { this.state = state; }
     
-    public String getDid() { return did; }
-    public void setDid(String did) { this.did = did; }
+    public String getDescription() { return description; }
+    public void setDescription(String description) { this.description = description; }
+    
+    public String getPhoneNo() { return phoneNo; }
+    public void setPhoneNo(String phoneNo) { this.phoneNo = phoneNo; }
     
 }
