@@ -1,0 +1,38 @@
+SQL> create table location (
+  2  city varchar2(25),
+  3  county varchar2(30),
+  4  state varchar2(15),
+  5  primary key (city, county, state));
+
+SQL> create table helpCenter (
+  2  cid varchar2(5),
+  3  name varchar2(20),
+  4  address varchar2(30),
+  5  phoneNo varchar2(10),
+  6  city varchar2(25),
+  7  county varchar2(30),
+  8  state varchar2(15),
+  9  primary key (cid),
+ 10  foreign key (city, county, state) references location (city, county, state));
+
+SQL> create table employee (
+  2  eid varchar2(5),
+  3  name varchar2(20),
+  4  email varchar2(30),
+  5  city varchar2(25),
+  6  county varchar2(30),
+  7  state varchar2(15),
+  8  phoneNo varchar2(10),
+  9  dependents integer, 
+ 10  primary key (eid),
+ 11  foreign key (city, county, state) references location (city, county, state));
+
+SQL> create table helper (
+  2  hid varchar2(5),
+  3  name varchar2(20),
+  4  email varchar2(30),
+  5  city varchar2(25),
+  6  county varchar2(30),
+  7  state varchar2(15),
+  8  primary key (hid),
+  9  foreign key (city, county, state) references location (city, county, state));
