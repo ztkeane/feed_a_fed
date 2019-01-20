@@ -1,7 +1,7 @@
 /*---------------------------------------------------------------------------*
  | Class <QueryController>
  *---------------------------------------------------------------------------*
- |        Author:  Ashley Mains, Amelia Marglon, Suresh Devendran, Zach Keane
+ |        Author:  Suresh Devendran, Zach Keane
  |       Purpose:  Controls flow of information from all of the query classes.
  | Inherits From:  None.
  |    Interfaces:  None.
@@ -70,32 +70,28 @@ public class QueryController {
     @PostMapping("/query1")
     public String query1Submit(Model model, @ModelAttribute Query1 query) {
         
-        /*String sqlQuery1 = "SELECT p1.pid, p1.lname, p1.fname, p1.gender, p1.dob, t1.visitDate, t1.visitRsn, t1.treatment, t1.did "
-            + "FROM amains.patient p1, amains.treatment t1 "
-            + "WHERE p1.pid=t1.pid AND p1.fname='"+query.getFname()+"' AND p1.lname='"+query.getLname()+"' AND p1.dob=TO_DATE('"+query.getDob()+"', 'YYYY-MM-DD') "
-            + "AND t1.visitDate >= ALL (SELECT t2.visitDate "
-                + "FROM amains.patient p2, amains.treatment t2 "
-                + "WHERE p2.pid=t2.pid AND p2.fname='"+query.getFname()+"' AND p2.lname='"+query.getLname()+"' AND p2.dob=TO_DATE('"+query.getDob()+"', 'YYYY-MM-DD'))";
+        String sqlQuery1 = "SELECT p1.hid, p1.name, p1.email, p1.phoneNo, p1.city, p1.county, p1.state, p1.description "
+            + "FROM ztkeane.helper p1 "
+            + "WHERE (p1.city='"+query.getCity()+"' OR p1.county='"+query.getCounty()+"' ) AND p1.state='"+query.getState()+"' ";
         
         List<Query1Result> allData = this.jdbcTemplate.query(sqlQuery1,
             new RowMapper<Query1Result>() {
                 public Query1Result mapRow(ResultSet rs, int rowNum) throws SQLException {
                     Query1Result result = new Query1Result();
-                    result.setPid(rs.getString("pid"));
-                    result.setPname(rs.getString("fname") + " " + rs.getString("lname"));
-                    result.setGender(rs.getString("gender"));
-                    result.setDob(rs.getDate("dob").toString());
-                    result.setVisitdate(rs.getDate("visitDate").toString());
-                    result.setVisitrsn(rs.getString("visitRsn"));
-                    result.setTreatment(rs.getString("treatment"));
-                    result.setDid(rs.getString("did"));
+                    result.setHid(rs.getString("hid"));
+                    result.setName(rs.getString("name"));
+                    result.setEmail(rs.getString("email"));
+                    result.setPhoneNo(rs.getString("phoneNo"));
+                    result.setCity(rs.getString("city"));
+                    result.setCounty(rs.getString("county"));
+                    result.setState(rs.getString("state"));
+                    result.setDescription(rs.getString("description"));
                     return result;
                 }
             });
-        
         model.addAttribute("query1", query);
         model.addAttribute("data", allData);
-        return "query1Result"; */
+        return "query1Result";
     }
     
 }
