@@ -103,7 +103,7 @@ public class HelperController {
             catch (Exception e){
                 System.out.println(e.getMessage());
                 System.out.println("Helper cannot be updated!");
-                return "doctor";
+                return "helper";
             }
         }
         // if (doctor.getAud().equals("delete"))
@@ -117,7 +117,7 @@ public class HelperController {
             catch (Exception e){
                 System.out.println(e.getMessage());
                 System.out.println("Doctor cannot be deleted!");
-                return "doctor";
+                return "helper";
             }
         }
         return "success";
