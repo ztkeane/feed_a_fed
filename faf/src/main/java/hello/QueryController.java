@@ -94,4 +94,57 @@ public class QueryController {
         return "query1Result";
     }
     
+    @PostMapping("/query2")
+    public String query2Submit(Model model, @ModelAttribute Query1 query) {
+        
+        String sqlQuery2 = "SELECT p1.hid, p1.name, p1.email, p1.phoneNo, p1.city, p1.county, p1.state, p1.description "
+            + "FROM ztkeane.helper p1 "
+            + "WHERE (p1.city='"+query.getCity()+"' OR p1.county='"+query.getCounty()+"' ) AND p1.state='"+query.getState()+"' ";
+        
+        List<Query2Result> allData = this.jdbcTemplate.query(sqlQuery2,
+            new RowMapper<Query2Result>() {
+                public Query2Result mapRow(ResultSet rs, int rowNum) throws SQLException {
+                    Query2Result result = new Query2Result();
+                    result.setHid(rs.getString("hid"));
+                    result.setName(rs.getString("name"));
+                    result.setEmail(rs.getString("email"));
+                    result.setPhoneNo(rs.getString("phoneNo"));
+                    result.setCity(rs.getString("city"));
+                    result.setCounty(rs.getString("county"));
+                    result.setState(rs.getString("state"));
+                    result.setDescription(rs.getString("description"));
+                    return result;
+                }
+            });
+        model.addAttribute("query2", query);
+        model.addAttribute("data", allData);
+        return "query2Result";
+    }
+
+    @PostMapping("/query3")
+    public String query3Submit(Model model, @ModelAttribute Query3 query) {
+        
+        String sqlQuery3 = "SELECT p1.hid, p1.name, p1.email, p1.phoneNo, p1.city, p1.county, p1.state, p1.description "
+            + "FROM ztkeane.helper p1 "
+            + "WHERE (p1.city='"+query.getCity()+"' OR p1.county='"+query.getCounty()+"' ) AND p1.state='"+query.getState()+"' ";
+        
+        List<Query3Result> allData = this.jdbcTemplate.query(sqlQuery3,
+            new RowMapper<Query3Result>() {
+                public Query3Result mapRow(ResultSet rs, int rowNum) throws SQLException {
+                    Query3Result result = new Query3Result();
+                    result.setHid(rs.getString("hid"));
+                    result.setName(rs.getString("name"));
+                    result.setEmail(rs.getString("email"));
+                    result.setPhoneNo(rs.getString("phoneNo"));
+                    result.setCity(rs.getString("city"));
+                    result.setCounty(rs.getString("county"));
+                    result.setState(rs.getString("state"));
+                    result.setDescription(rs.getString("description"));
+                    return result;
+                }
+            });
+        model.addAttribute("query3", query);
+        model.addAttribute("data", allData);
+        return "query3Result";
+    }
 }
