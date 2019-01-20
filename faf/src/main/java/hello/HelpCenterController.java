@@ -1,18 +1,5 @@
-/*---------------------------------------------------------------------------*
- | Class <HelperController>
- *---------------------------------------------------------------------------*
- |        Author:  Suresh Devendran, Zach Keane
- |       Purpose:  To control the flow of information to the Doctor class.
- | Inherits From:  None.
- |    Interfaces:  None.
- *---------------------------------------------------------------------------*
- |     Constants:  None.
- *---------------------------------------------------------------------------*
- |  Constructors:  None.
- | Class Methods:  None.
- | Inst. Methods:  postConstruct(), doctorForm(Model), doctorSubmit(Doctor),
- allDoctors(Model)
- *---------------------------------------------------------------------------*/
+//Suresh Devendran and Zachary Keane
+
 
 package hello;
 
