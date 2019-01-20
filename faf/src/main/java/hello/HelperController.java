@@ -173,7 +173,7 @@ public class HelperController {
                     return helper;
                 }
          });
-     model.addAttribute("data", allData);
-     return "/allHelpers";
+         model.addAttribute("data", allData);
+         return "/allHelpers";
      }
 }
