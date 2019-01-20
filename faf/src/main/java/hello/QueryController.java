@@ -91,6 +91,9 @@ public class QueryController {
             });
         model.addAttribute("query1", query);
         model.addAttribute("data", allData);
+        
+        
+        
         return "query1Result";
     }
     
@@ -115,7 +118,7 @@ public class QueryController {
     @PostMapping("/query2")
     public String query2Submit(Model model, @ModelAttribute Query2 query) {
         
-        String sqlQuery1 = "SELECT p1.cid, p1.name, p1.address, p1.phoneNo, p1.city, p1.county, p1.state "
+        String sqlQuery2 = "SELECT p1.cid, p1.name, p1.address, p1.phoneNo, p1.city, p1.county, p1.state "
         + "FROM ztkeane.helpCenter p1 "
         + "WHERE (p1.city='"+query.getCity()+"' OR p1.county='"+query.getCounty()+"' ) AND p1.state='"+query.getState()+"' ";
         
