@@ -104,7 +104,6 @@ public class HelpCenterController {
                 return "helpCenter";
             }
         }
-        // if (doctor.getAud().equals("delete"))
         else {
             System.out.println("Deleting");
             try {
