@@ -37,7 +37,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 @Controller
-public class HelperController {
+public class LocationController {
     
     @Autowired
     private DataSource dataSource;

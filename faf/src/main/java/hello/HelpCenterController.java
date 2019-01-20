@@ -37,7 +37,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 @Controller
-public class HelperController {
+public class HelpCenterController {
     
     @Autowired
     private DataSource dataSource;
@@ -75,9 +75,7 @@ public class HelperController {
                                     + "'" + helpCenter.getPhoneNo() + "', "
                                     + "'" + helpCenter.getCity() + "', "
                                     + "'" + helpCenter.getCounty() + "', "
-                                    + "'" + helpCenter.getState() + "', "
-                                    + "'" + helpCenter.getPhoneNo() + ", "
-                                    + helpCenter.getDependents()
+                                    + "'" + helpCenter.getState() + "' "
                                     + ")"
                                     );
             }
@@ -91,10 +89,11 @@ public class HelperController {
             System.out.println("Updating");
             try {
                 jdbcTemplate.update("UPDATE ztkeane.helpCenter SET "
+                                    + "phoneNo = '" + helpCenter.getPhoneNo() + "', "
                                     + "name = '" + helpCenter.getName() + "', "
-                                    + "email = '" + helpCenter.getEmail() + "', "
-                                    + "city = '" + helpCenter.getCity() + "', "
-                                    + "county = '" + helpCenter.getCounty() + "', "
+                                    + "address = '" + helpCenter.getAddress() + "', "
+                                    + "city = '" + helpCenter.getCity() + "' "
+                                    + "county = '" + helpCenter.getCounty() + "' "
                                     + "state = '" + helpCenter.getState() + "' "
                                     + "WHERE cid = '" + helpCenter.getCid().toLowerCase() + "'"
                                     );
