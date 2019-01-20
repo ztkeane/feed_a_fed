@@ -158,7 +158,7 @@ public class HelperController {
      *------------------------------------------------------------------------*/
     @GetMapping("/allHelpers")
      public String allHelpers(Model model) {
-         List<Helper> allData = this.jdbcTemplate.query("select * from ztkeane.helpers",
+         List<Helper> allData = this.jdbcTemplate.query("select * from ztkeane.helper",
          new RowMapper<Helper>() {
                 public Helper mapRow(ResultSet rs, int rowNum) throws SQLException {
                     Helper helper = new Helper();
