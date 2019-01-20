@@ -41,3 +41,14 @@ SQL> create table helper (
  11  foreign key (city, county, state) references location (city, county, state));
 
 
+Helpers:
+HID Name Email City County State Description PhoneNo
+
+Employees:
+EID Name Email City County State Dependents PhoneNo
+
+HelpCenters:
+CID Name Address City County State PhoneNo
+
+Locations:
+City County State

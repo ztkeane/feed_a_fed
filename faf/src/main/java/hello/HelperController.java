@@ -136,6 +136,19 @@ public class HelperController {
      }*/
     
     /*------------------------------------------------------------------------*
+     /*@GetMapping("/deletePerson")
+     public String personFormDelete(Model model) {
+     model.addAttribute("person", new Person());
+     return "deletePerson";
+     }
+     
+     @PostMapping("/deletePerson")
+     public String personDelete(@ModelAttribute Person person) {
+     jdbcTemplate.update("delete from baileynottingham.people where first_name = ? and last_name = ?", person.getFirstName(), person.getLastName());
+     return "deletePersonResult";
+     }*/
+    
+    /*------------------------------------------------------------------------*
      |          Method:  allDoctors(Model)
      |         Purpose:  Forms the Doctor table.
      |  Pre-Conditions:  The database is updated properly.
@@ -143,35 +156,24 @@ public class HelperController {
      |      Parameters:  Model
      |         Returns:  String, the HTML page.
      *------------------------------------------------------------------------*/
-    /*@GetMapping("/allDoctors")
-    public String allDoctors(Model model) {
-        List<Doctor> allData = this.jdbcTemplate.query(
-                                                       "select * from amains.doctor",
-                                                       new RowMapper<Doctor>() {
-                                                           public Doctor mapRow(ResultSet rs, int rowNum) throws SQLException {
-                                                               Doctor doctor = new Doctor();
-                                                               doctor.setDid(rs.getString("did"));
-                                                               doctor.setLname(rs.getString("lname"));
-                                                               doctor.setFname(rs.getString("fname"));
-                                                               doctor.setDob(rs.getDate("dob").toString());
-                                                               doctor.setStatus(rs.getString("status"));
-                                                               int deptId = rs.getInt("deptId");
-                                                               if(deptId != 0) {
-                                                                   doctor.setDeptid(""+deptId);
-                                                               } else {
-                                                                   doctor.setDeptid("");
-                                                               }
-                                                               int officeNo = rs.getInt("officeNo");
-                                                               if(officeNo != 0) {
-                                                                   doctor.setOfficeno(""+officeNo);
-                                                               } else {
-                                                                   doctor.setOfficeno("");
-                                                               }
-                                                               return doctor;
-                                                           }
-                                                       });
-        model.addAttribute("data", allData);
-        return "/allDoctors";
-    }
-    */
+    @GetMapping("/allHelpers")
+     public String allHelpers(Model model) {
+         List<Helper> allData = this.jdbcTemplate.query("select * from ztkeane.helpers",
+         new RowMapper<Helper>() {
+                public Helper mapRow(ResultSet rs, int rowNum) throws SQLException {
+                    Helper helper = new Helper();
+                    helper.setHid(rs.getString("hid"));
+                    helper.setName(rs.getString("name"));
+                    helper.setEmail(rs.getString("email"));
+                    helper.setCity(rs.getString("city"));
+                    helper.setCounty(rs.getString("county"));
+                    helper.setState(rs.getString("state"));
+                    helper.setDescription(rs.getString("description"));
+                    helper.setPhoneNo(rs.getString("phoneNo"));
+                    return helper;
+                }
+         });
+     model.addAttribute("data", allData);
+     return "/allHelpers";
+     }
 }
