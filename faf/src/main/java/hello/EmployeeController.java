@@ -48,7 +48,7 @@ public class EmployeeController {
         jdbcTemplate = new JdbcTemplate(dataSource);
     }
     
-    @GetMapping("/helper")
+    @GetMapping("/employee")
     public String doctorForm(Model model) {
         model.addAttribute("employee", new Employee());
         return "success";

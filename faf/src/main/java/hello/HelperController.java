@@ -93,7 +93,7 @@ public class HelperController {
                                     + "name = '" + helper.getName() + "', "
                                     + "email = '" + helper.getEmail() + "', "
                                     + "phoneNo = '" + helper.getPhoneNo() + "', "
-                                    + "description = '" + helper.getDescription() + ", "
+                                    + "description = '" + helper.getDescription() + "', "
                                     + "city = '" + helper.getCity() + "', "
                                     + "county = '" + helper.getCounty() + "', "
                                     + "state = '" + helper.getState() + "' "
