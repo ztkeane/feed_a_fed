@@ -1,18 +1,4 @@
-/*---------------------------------------------------------------------------*
- | Class <DoctorController>
- *---------------------------------------------------------------------------*
- |        Author:  Ashley Mains, Amelia Marglon, Suresh Devendran, Zach Keane
- |       Purpose:  To control the flow of information to the Doctor class.
- | Inherits From:  None.
- |    Interfaces:  None.
- *---------------------------------------------------------------------------*
- |     Constants:  None.
- *---------------------------------------------------------------------------*
- |  Constructors:  None.
- | Class Methods:  None.
- | Inst. Methods:  postConstruct(), doctorForm(Model), doctorSubmit(Doctor),
-                allDoctors(Model)
- *---------------------------------------------------------------------------*/
+//Suresh Devendran and Zachary Keane
 
 package hello;
 
@@ -207,15 +193,6 @@ public class DoctorController {
         jdbcTemplate.update("delete from baileynottingham.people where first_name = ? and last_name = ?", person.getFirstName(), person.getLastName());
         return "deletePersonResult";
     }*/
-
-    /*------------------------------------------------------------------------*
-     |          Method:  allDoctors(Model)
-     |         Purpose:  Forms the Doctor table.
-     |  Pre-Conditions:  The database is updated properly.
-     | Post-Conditions:  The user can view all doctors.
-     |      Parameters:  Model
-     |         Returns:  String, the HTML page.
-     *------------------------------------------------------------------------*/
     @GetMapping("/allDoctors")
     public String allDoctors(Model model) {
         List<Doctor> allData = this.jdbcTemplate.query(

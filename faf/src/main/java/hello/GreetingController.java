@@ -1,17 +1,4 @@
-/*---------------------------------------------------------------------------*
- | Class <Greeting>
- *---------------------------------------------------------------------------*
- |        Author:  Ashley Mains, Amelia Marglon, Suresh Devendran, Zach Keane
- |       Purpose:  Provided by TAs.
- | Inherits From:  None.
- |    Interfaces:  None.
- *---------------------------------------------------------------------------*
- |     Constants:  None.
- *---------------------------------------------------------------------------*
- |  Constructors:  None.
- | Class Methods:  None.
- | Inst. Methods:  method()
- *---------------------------------------------------------------------------*/
+//Suresh Devendran and Zachary Keane
 
 package hello;
 

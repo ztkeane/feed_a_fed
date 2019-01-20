@@ -1,17 +1,4 @@
-/*---------------------------------------------------------------------------*
- | Class <Doctor>
- *---------------------------------------------------------------------------*
- |        Author:  Ashley Mains, Amelia Marglon, Suresh Devendran, Zach Keane
- |       Purpose:  To provide and store information on doctors.
- | Inherits From:  None.
- |    Interfaces:  None.
- *---------------------------------------------------------------------------*
- |     Constants:  None.
- *---------------------------------------------------------------------------*
- |  Constructors:  None.
- | Class Methods:  None.
- | Inst. Methods:  getters and setters
- *---------------------------------------------------------------------------*/
+//Suresh Devendran and Zachary Keane
 
 package hello;
 
