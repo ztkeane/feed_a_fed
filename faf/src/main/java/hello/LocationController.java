@@ -111,35 +111,19 @@ public class LocationController {
      |      Parameters:  Model
      |         Returns:  String, the HTML page.
      *------------------------------------------------------------------------*/
-    /*@GetMapping("/allDoctors")
-     public String allDoctors(Model model) {
-     List<Doctor> allData = this.jdbcTemplate.query(
-     "select * from amains.doctor",
-     new RowMapper<Doctor>() {
-     public Doctor mapRow(ResultSet rs, int rowNum) throws SQLException {
-     Doctor doctor = new Doctor();
-     doctor.setDid(rs.getString("did"));
-     doctor.setLname(rs.getString("lname"));
-     doctor.setFname(rs.getString("fname"));
-     doctor.setDob(rs.getDate("dob").toString());
-     doctor.setStatus(rs.getString("status"));
-     int deptId = rs.getInt("deptId");
-     if(deptId != 0) {
-     doctor.setDeptid(""+deptId);
-     } else {
-     doctor.setDeptid("");
-     }
-     int officeNo = rs.getInt("officeNo");
-     if(officeNo != 0) {
-     doctor.setOfficeno(""+officeNo);
-     } else {
-     doctor.setOfficeno("");
-     }
-     return doctor;
-     }
-     });
-     model.addAttribute("data", allData);
-     return "/allDoctors";
-     }
-     */
+    @GetMapping("/allLocations")
+    public String allLocations(Model model) {
+        List<Location> allData = this.jdbcTemplate.query("select * from ztkeane.location",
+            new RowMapper<Location>() {
+            public Location mapRow(ResultSet rs, int rowNum) throws SQLException {
+                Location location = new Location();
+                location.setCity(rs.getString("city"));
+                location.setCounty(rs.getString("county"));
+                location.setState(rs.getString("state"));
+                return location;
+            }
+        });
+        model.addAttribute("data", allData);
+        return "/allLocations";
+    }
 }

@@ -141,35 +141,22 @@ public class HelpCenterController {
      |      Parameters:  Model
      |         Returns:  String, the HTML page.
      *------------------------------------------------------------------------*/
-    /*@GetMapping("/allDoctors")
-     public String allDoctors(Model model) {
-     List<Doctor> allData = this.jdbcTemplate.query(
-     "select * from amains.doctor",
-     new RowMapper<Doctor>() {
-     public Doctor mapRow(ResultSet rs, int rowNum) throws SQLException {
-     Doctor doctor = new Doctor();
-     doctor.setDid(rs.getString("did"));
-     doctor.setLname(rs.getString("lname"));
-     doctor.setFname(rs.getString("fname"));
-     doctor.setDob(rs.getDate("dob").toString());
-     doctor.setStatus(rs.getString("status"));
-     int deptId = rs.getInt("deptId");
-     if(deptId != 0) {
-     doctor.setDeptid(""+deptId);
-     } else {
-     doctor.setDeptid("");
-     }
-     int officeNo = rs.getInt("officeNo");
-     if(officeNo != 0) {
-     doctor.setOfficeno(""+officeNo);
-     } else {
-     doctor.setOfficeno("");
-     }
-     return doctor;
-     }
-     });
-     model.addAttribute("data", allData);
-     return "/allDoctors";
-     }
-     */
+    @GetMapping("/allHelpCenters")
+    public String allHelpCenters(Model model) {
+        List<HelpCenter> allData = this.jdbcTemplate.query("select * from ztkeane.helpCenter", new RowMapper<HelpCenter>() {
+                public HelpCenter mapRow(ResultSet rs, int rowNum) throws SQLException {
+                    HelpCenter helpCenter = new HelpCenter();
+                    helpCenter.setCid(rs.getString("cid"));
+                    helpCenter.setName(rs.getString("name"));
+                    helpCenter.setAddress(rs.getString("address"));
+                    helpCenter.setCity(rs.getString("city"));
+                    helpCenter.setCounty(rs.getString("county"));
+                    helpCenter.setState(rs.getString("state"));
+                    helpCenter.setPhoneNo(rs.getString("phoneNo"));
+                    return helpCenter;
+                }
+            });
+        model.addAttribute("data", allData);
+        return "/allHelpCenters";
+    }
 }

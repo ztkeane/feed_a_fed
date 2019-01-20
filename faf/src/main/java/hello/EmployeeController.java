@@ -210,36 +210,22 @@ public class EmployeeController {
      |      Parameters:  Model
      |         Returns:  String, the HTML page.
      *------------------------------------------------------------------------*/
-    /*@GetMapping("/allDoctors")
-    public String allDoctors(Model model) {
-        List<Doctor> allData = this.jdbcTemplate.query("select * from amains.doctor",
-        new RowMapper<Doctor>() {
-            public Doctor mapRow(ResultSet rs, int rowNum) throws SQLException {
-                Doctor doctor = new Doctor();
-                doctor.setDid(rs.getString("did"));
-                doctor.setLname(rs.getString("lname"));
-                doctor.setFname(rs.getString("fname"));
-                doctor.setDob(rs.getDate("dob").toString());
-                doctor.setStatus(rs.getString("status"));
-                int deptId = rs.getInt("deptId");
-                if(deptId != 0) {
-                    doctor.setDeptid(""+deptId);
+    @GetMapping("/allEmployees")
+    public String allEmployees(Model model) {
+        List<Employee> allData = this.jdbcTemplate.query("select * from ztkeane.employee", new RowMapper<Employee>() {
+                public Employee mapRow(ResultSet rs, int rowNum) throws SQLException {
+                    Employee employee = new Employee();
+                    employee.setEid(rs.getString("eid"));
+                    employee.setName(rs.getString("name"));
+                    employee.setEmail(rs.getString("email"));
+                    employee.setCity(rs.getString("city"));
+                    employee.setCounty(rs.getString("county"));
+                    employee.setState(rs.getString("state"));
+                    return employee;
                 }
-                else {
-                    doctor.setDeptid("");
-                }
-                int officeNo = rs.getInt("officeNo");
-                if(officeNo != 0) {
-                    doctor.setOfficeno(""+officeNo);
-                }
-                else {
-                    doctor.setOfficeno("");
-                }
-                return doctor;
-            }
-        });
+            });
         model.addAttribute("data", allData);
-        return "/allDoctors";
-    }*/
+        return "/allEmployees";
+    }
     
 }
