@@ -221,6 +221,7 @@ public class EmployeeController {
                     employee.setCity(rs.getString("city"));
                     employee.setCounty(rs.getString("county"));
                     employee.setState(rs.getString("state"));
+                    employee.setPhoneNo(rs.getString("phoneNo"));
                     return employee;
                 }
             });
