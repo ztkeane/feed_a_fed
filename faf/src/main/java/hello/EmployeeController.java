@@ -51,7 +51,7 @@ public class EmployeeController {
     @GetMapping("/employee")
     public String doctorForm(Model model) {
         model.addAttribute("employee", new Employee());
-        return "success";
+        return "employee";
     }
     
     /*private String aud;
