@@ -20,7 +20,7 @@
             <th class="tableHeader">PhoneNo</th>
         </tr>
         <tr class="hoverEffect" th:each="datum : ${data}">
-            <td class="result" th:text="${datum.getHid()}"></td>
+            <td class="result" th:text="${datum.getEid()}"></td>
             <td class="result" th:text="${datum.getName()}"></td>
             <td class="result" th:text="${datum.getEmail()}"></td>
             <td class="result" th:text="${datum.getCity()}"></td>
